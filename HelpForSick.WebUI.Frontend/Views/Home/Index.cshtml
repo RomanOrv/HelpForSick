@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @*    <link href="~/Styles/bootstrap.css" rel="stylesheet" type="text/css"/>*@
+    @*    <link href="~/Styles/styleHtmlEditor.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/libs/modernizr/modernizr-2.8.3.js"></script>
+    <script src="~/Scripts/libs/jquery/jquery-2.1.4.js"></script>
+    <script src="~/Scripts/libs/jquery/jquery.validate.js"></script>
+    <script src="~/Scripts/libs/jquery/jquery.validate.unobtrusive.js"></script>
+</head>
+<body class="">
+
+    <h2>Index</h2>
+    <div class="containerShow">
+        <span style="background-color: blueviolet; border: 1px solid black; border-radius: 5px; top: 10px; position: relative;">
+            @Html.ActionLink("Edit Article", "WriteArticle", "Home", new { }, new { @style = "color: white;" })
+        </span>
+        <hr />
+        <h2>Article</h2>
+        <div id="divText"></div>
+        <hr />
+
+
+        <script src="~/Scripts/pages/showArticle.js"></script>
+    </div>
+    </body>
+</html>

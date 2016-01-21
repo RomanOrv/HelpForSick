@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FD5C0BC7-4A23-435A-859A-08BDE704D422}</ProjectGuid>
+    <ProjectGuid>{72ACC63A-04ED-4966-8A9A-F3C78B1A4C95}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HelpForSick.Entities</RootNamespace>
@@ -65,6 +65,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HelpForSickEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PersonPageInfo.cs">
+      <DependentUpon>HelpForSickEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Picture.cs">
       <DependentUpon>HelpForSickEntities.tt</DependentUpon>

@@ -1,0 +1,55 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HelpForSick.WebUI.Frontend.Models.PersonInfoModel
+
+
+    <link href="~/Styles/bootstrap-wysihtml5.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/bootstrap.css" rel="stylesheet" type="text/css" />
+    @*    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />*@
+    <script src="~/Scripts/libs/wysihtml5/wysihtml5-0.3.0_rc2.js"></script>
+    <script src="~/Scripts/libs/bootstrap/bootstrap.js" type="text/javascript"></script>
+    <script src="~/Scripts/libs/wysihtml5/bootstrap-wysihtml5-0.0.2.js"></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    @*<script src="~/Scripts/pages/writePersonPage.js" type="text/javascript"></script>*@
+    <div class="container"> 
+        @using (Html.BeginForm("SaveFormattedPersonInfo", "Home", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+
+        @*<form method="post" style="width: 450px;">*@
+            <div class="my_container">
+                <h2>Загальні відомості про себе</h2>
+                @Html.TextAreaFor(x => x.MainInfo, new { id = "tareaMainInfo", style = "width: 900px; height: 600px" });
+                @*<textarea id="tareaMainInfo" style="width: 900px; height: 600px; /*margin-left: 100px*/"></textarea>*@
+                <h2>Мій діагноз</h2>
+                @Html.TextBoxFor(x => x.Diagnosis, new { id = "txtDiagnosis", style = "width: 500px", type="text" });
+                @*<input type="text" id="txtDiagnosis" style="width:500px;"/>*@
+                <h2>Інформація про вартість лікування</h2>
+                @Html.TextAreaFor(x => x.MoneyInfo, new { id = "tareaMoneyInfo", style = "width: 900px; height: 200px" });
+                @*<textarea id="tareaMoneyInfo" style="width: 900px; height: 200px; /*margin-left: 100px*/"></textarea>*@
+                <h2>Прикріпіть фотографії для галереї</h2>
+                @Html.TextBoxFor(x => x.Images, new { id = "imageUpload", style = "width: 500px", type = "file", accept = "image/jpg" });
+                @*<input id="imageUpload" type="file" accept="image/jpg" multiple="multiple" />*@
+                <div class="save-button-wrapper">
+                    <input id="save-button" type="submit" value="Save Formatted Text" />
+                </div>
+            </div>
+            <script src="http://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+            <a href="#" id="upload_widget_opener">Upload multiple images</a>
+        @*</form>*@
+        }
+    </div>
+    <script type="text/javascript">
+(function ($) {
+
+  document.getElementById("upload_widget_opener").addEventListener("click", function() {
+
+    cloudinary.openUploadWidget({ cloud_name: 'df0y2fmjb', upload_preset: 'spkbrly5'},
+      function(error, result) { console.log(error, result) });
+
+  }, false);
+
+})(jQuery);
+    </script>
+@*</body>
+</html>*@

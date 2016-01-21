@@ -10,5 +10,6 @@ namespace HelpForSick.Repository
     {
         Article GetArticle();
         void SetArticleContent(string content);
+        void CreateArticle(string title);
     }
 }

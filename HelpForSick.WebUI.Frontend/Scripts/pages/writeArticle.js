@@ -24,7 +24,7 @@
                 dataType: "json",
                 type: "POST",
                 data: {
-                    formattedText: escape(formattedText)
+                    formattedText: encodeURIComponent(formattedText)
                 }
             });
 
@@ -47,7 +47,7 @@
             });
 
             xhr.done(function (data) {
-                var decodedText = unescape(data.formattedText);
+                var decodedText = decodeURIComponent(data.formattedText);
                 var replacedText = decodedText.split('+').join(' ');
 
                 //var htmlText = $.parseHTML(replacedText);

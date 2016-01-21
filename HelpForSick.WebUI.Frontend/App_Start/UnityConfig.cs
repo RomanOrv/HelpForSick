@@ -13,6 +13,7 @@ namespace HelpForSick.WebUI.Frontend
 			var container = new UnityContainer();
             string connectionString = ConfigurationManager.ConnectionStrings["HelpForSickEntities"].ConnectionString;
             container.RegisterType<IArticleRepository, EFArticleRepository>(new InjectionConstructor(connectionString));
+            container.RegisterType<IPersonPageInfoRepository, EFPersonPageInfoRepository>(new InjectionConstructor(connectionString));
 
             // register all your components with the container here
             // it is NOT necessary to register your controllers

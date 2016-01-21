@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="HelpForSickModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="HelpForSickModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Article">
           <Key>
             <PropertyRef Name="Id" />
@@ -14,6 +14,17 @@
           <Property Name="CreationTime" Type="datetime" Nullable="false" />
           <Property Name="Content" Type="nvarchar(max)" />
           <Property Name="Published" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonPageInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MainInfo" Type="nvarchar(max)" />
+          <Property Name="Diagnosis" Type="nvarchar" MaxLength="255" />
+          <Property Name="MoneyInfo" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreationTime" Type="datetime" />
+          <Property Name="Published" Type="bit" />
         </EntityType>
         <EntityType Name="Picture">
           <Key>
@@ -26,10 +37,10 @@
         </EntityType>
         <EntityContainer Name="HelpForSickModelStoreContainer">
           <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonPageInfo" EntityType="Self.PersonPageInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Picture" EntityType="Self.Picture" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HelpForSickModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -43,6 +54,17 @@
           <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Published" Type="Boolean" Nullable="false" />
         </EntityType>
+        <EntityType Name="PersonPageInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MainInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Diagnosis" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MoneyInfo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreationTime" Type="DateTime" Precision="3" />
+          <Property Name="Published" Type="Boolean" />
+        </EntityType>
         <EntityType Name="Picture">
           <Key>
             <PropertyRef Name="Id" />
@@ -54,6 +76,7 @@
         </EntityType>
         <EntityContainer Name="HelpForSickEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Articles" EntityType="Self.Article" />
+          <EntitySet Name="PersonPageInfoes" EntityType="Self.PersonPageInfo" />
           <EntitySet Name="Pictures" EntityType="Self.Picture" />
         </EntityContainer>
       </Schema>
@@ -69,6 +92,18 @@
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
                 <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Published" ColumnName="Published" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonPageInfoes">
+            <EntityTypeMapping TypeName="HelpForSickModel.PersonPageInfo">
+              <MappingFragment StoreEntitySet="PersonPageInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MainInfo" ColumnName="MainInfo" />
+                <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+                <ScalarProperty Name="MoneyInfo" ColumnName="MoneyInfo" />
+                <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
                 <ScalarProperty Name="Published" ColumnName="Published" />
               </MappingFragment>
             </EntityTypeMapping>

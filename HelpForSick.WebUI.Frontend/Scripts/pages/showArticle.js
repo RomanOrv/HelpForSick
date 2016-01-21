@@ -22,7 +22,7 @@
 
 
             var xhr = $.ajax({
-                url: "/Home/GetFormattedText_Show",
+                url: "/Home/GetFormattedText",
                 dataType: "json",
                 type: "POST",
                 data: {
@@ -31,7 +31,7 @@
             });
 
             xhr.done(function (data) {
-                var decodedText = unescape(data.formattedText);
+                var decodedText = decodeURIComponent(data.formattedText);
                 var replacedText = decodedText.split('+').join(' ');
 
                 var htmlText = $.parseHTML(replacedText);

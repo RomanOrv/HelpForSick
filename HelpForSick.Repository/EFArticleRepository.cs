@@ -17,6 +17,27 @@ namespace HelpForSick.Repository
             this._connectionString = connectionString;
         }
 
+        public void CreateArticle(string title)
+        {
+            using (ObjectContext context = new ObjectContext(_connectionString))
+            {
+                var articles = context.CreateObjectSet<Article>();
+                int maxId = articles.Any() ? articles.Max(x => x.Id) : 1;
+
+                Article newArticle = new Article()
+                {
+                    Id = +maxId,
+                    Title = title,
+                    Content = string.Empty,
+                    CreationTime = DateTime.Now,
+                    Published = true
+                };
+
+                articles.AddObject(newArticle);
+                context.SaveChanges();
+            };
+        }
+
         public Article GetArticle()
         {
             using (ObjectContext context = new ObjectContext(_connectionString))

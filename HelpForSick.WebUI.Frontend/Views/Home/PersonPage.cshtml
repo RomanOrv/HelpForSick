@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "PersonPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<link href="~/Styles/demo.css" rel="stylesheet" />*@
+<h2>PersonPage</h2>
+@*<section id="content" class="column-right">*@
+
+    <article>
+
+        <div style="width:100%; height:500px; background-color: #fff; margin-bottom:20px;">
+        <img src="http://vitasych.in.ua/wp-content/uploads/2014/10/image-23.jpg" alt="" style="width: 80%; height: 500px;" />
+            <section class="slider">
+                <div class="flexslider">
+                    @*<ul class="slides">
+                        <li>
+                            <img src="images/kitchen_adventurer_cheesecake_brownie.jpg" />
+                            <p class="flex-caption">Adventurer Cheesecake Brownie</p>
+                        </li>
+                        <li>
+                            <img src="images/kitchen_adventurer_lemon.jpg" />
+                            <p class="flex-caption">Adventurer Lemon</p>
+                        </li>
+                        <li>
+                            <img src="images/kitchen_adventurer_donut.jpg" />
+                            <p class="flex-caption">Adventurer Donut</p>
+                        </li>
+                        <li>
+                            <img src="images/kitchen_adventurer_caramel.jpg" />
+                            <p class="flex-caption">Adventurer Caramel</p>
+                        </li>
+                    </ul>*@
+                </div>
+            </section>
+        </div>
+        <div id="mainInfo" style="background-color: #fff; margin-bottom:20px;">
+            @*<p style="text-align: center; padding-top:10px;  margin:0;"><strong>Hello. My name's Vitalina Sych. I am 12 years old.</strong></p>
+            <p style="text-align: center; margin:0"><strong>I am from Ukraine.</strong></p>
+            <p style="text-align: center;  margin:0;"><strong>I love God.</strong></p>
+
+            <p style="text-align: center; "><strong>He gave me my parents, brother and sister. And He also gave me life.</strong></p>
+            <h3 style="text-align: center;"><strong>But the disease wants to take this gift away from me. </strong></h3>
+            <h1 style="text-align: center;"><strong>But I will not give up!</strong></h1>
+            <p style="text-align: center; margin:0;"><strong>I believe that I can still do a lot of good in my life.</strong></p>
+            <p style="text-align: center;"><strong>Give a lot of fun to my friends and family, to become a professional doctor and help the many children who are sick, as well as I am.</strong></p>*@
+        </div>
+        <div style="background-color: #cfc; margin-top:20px; ">
+            <table>
+                <tr style=" border: none !important;  border-collapse:collapse;">
+                    <td>
+                        <p style="padding-right:0%; padding-top:20px; margin-bottom:0; font-size: 1.5em;"><strong>My diagnosis</strong>&nbsp;  - &nbsp;<strong id="diagnosis">@*lymphoblastic &nbsp;leukemia&nbsp;*@</strong>.</p>
+                    </td>
+                    <td>
+                        <a href="http://www.vitasych.in.ua/documents/" class="button" style="position:relative; left:45px;">LEARN MORE</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="background-color: #cfc; margin-top:20px; ">
+            <table>
+                <tr>
+                    <td>
+
+                        <p style="padding-right:0%; padding-top:20px; margin-bottom:0; font-size: 1.5em;">But I've been promised to be cured, if I gather&nbsp; $<strong id="moneyInfo">@*100&nbsp;000*@ </strong> for this. Help me with this!</p>
+                    </td>
+                    <td>
+                        <a href="" class="button">Donate</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="background-color: #cfc; margin-top:20px; ">
+            <table>
+                <tr>
+                    <td>
+
+                        <p style="padding-right:0%; padding-top:20px; margin-bottom:0; font-size: 1.5em;">If you transfer money to my account, you can check whether they have come to me.</p>
+                    </td>
+                    <td style="width:150px;">
+                        <a href="" class="button">SEE REPORT</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </article>
+<script src="~/Scripts/pages/showPersonPage.js"></script>
+@*</section>*@
+

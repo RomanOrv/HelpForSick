@@ -26,6 +26,7 @@ namespace HelpForSick.Entities
         }
     
         public DbSet<Article> Articles { get; set; }
+        public DbSet<PersonPageInfo> PersonPageInfoes { get; set; }
         public DbSet<Picture> Pictures { get; set; }
     }
 }

@@ -4,9 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />*@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/styles.css" rel="stylesheet" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/libs/jquery/jquery-2.1.4.js"></script>
+    <script src="~/Scripts/libs/jquery/jquery.validate.js"></script>
+    <script src="~/Scripts/libs/jquery/jquery.validate.unobtrusive.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -26,13 +30,75 @@
         </div>
     </div>
 
-    <div class="container body-content">
-        @RenderBody()
+    @*<div class="container body-content">*@
+        <section id="body" class="width">
+            <aside id="sidebar" class="column-left">
+                <header>
+                    <h1><a href="#">Vitalina</a></h1>
+
+                    <h2>Welcome to my page!</h2>
+
+                </header>
+                <nav id="mainnav">
+                    <ul>
+                        <li class="selected-item"><a href="index.html">Home</a></li>
+                        <li><a href="examples.html">Payment methods</a></li>
+                        <li><a href="#">Report</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Documents</a></li>
+                        <li><a href="#">Contacts</a></li>
+
+                    </ul>
+                </nav>
+
+                <div class="responsive-sidebar-hide block">
+                    <p class="text-block">Aenean nec massa a tortor auctor sodales sed a dolor. Duis vitae lorem sem. Proin at velit vel arcu pretium luctus. 					<a href="#" class="readmore">Read More &raquo;</a></p>
+                </div>
+
+
+                <div class="responsive-sidebar-hide block" style="width:100%; height:50px;">
+                    <a href="" class="button" style="color:#fff; font-size:1.1em;">Donate</a>
+                    <!--                 		<h4>Search site</h4>
+                                                    <form method="get" class="searchform" action="#" >
+                                                    <p>
+                                                        <input type="text" value="Search..." name="s" class="s" />
+
+                                                    </p>
+                                                </form>	 -->
+                </div>
+                <div class="responsive-sidebar-hide block">
+                    <h4>Maecenas varius</h4>
+                    <ul>
+                        <li><a href="#">Nam cursus nisi nec viverra iaculis</a></li>
+                        <li><a href="#">Integer lacinia risus id nibh vestibulum</a></li>
+                        <li><a href="#">Mauris eget ante ut elit rutrum ornare </a></li>
+                        <li><a href="#">Vivamus quis orci et suscipit consequa</a></li>
+                        <li><a href="#">Nam eget tellus adipiscin hendrerit</a></li>
+                    </ul>
+                </div>
+
+                <div class="responsive-sidebar-hide block">
+                    <p class="text-block coloured-text-block">Aenean nec massa a tortor auctor sodales sed a dolor. Duis vitae lorem sem. Proin at velit vel arcu pretium luctus. 					<a href="#" class="readmore">Read More &raquo;</a></p>
+                </div>
+
+                <div class="responsive-buttons">
+                    <a href="#" id="show-sidebar-button">Show sidebar</a>
+                </div>
+                <!-- 			<footer class="responsive-sidebar-hide">
+                                <p>&copy; 2014 sitename. <a href="http://zypopwebtemplates.com/">Free CSS Templates</a> by ZyPOP</p>
+                            </footer> -->
+
+
+            </aside>
+            <section id="content" class="column-right">
+                @RenderBody()
+            </section> 
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            @*<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>*@
         </footer>
-    </div>
+            </section>
+@*</div>*@
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
